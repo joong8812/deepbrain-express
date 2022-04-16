@@ -8,6 +8,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors()); 
 
+const APP = './app/routes'
+const nodes = ['basic']
+for(const leaf of nodes){
+  require(`${APP}/${leaf}.route`)({url:`/api/${leaf}`,app})
+}
 const corsOptions = {
   origin: 'http://localhost:3000',
   optionsSuccessStatus: 200 
