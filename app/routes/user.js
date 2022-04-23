@@ -34,5 +34,9 @@ app.get('/logout', passport.authenticate('jwt', {session: false}), (req, res) =>
     console.log(' ### 5. Router entry - logout ### ')
     UserService().logout(req, res)
 })
+app.get('/getUsers', cors(corsOptions), (req, res) => {
+    console.log(' ### 5. Router entry - getUsers ### ')
+    UserService().getUsers(req, res)
+})
 
 export default app
