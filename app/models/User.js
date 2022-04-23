@@ -12,7 +12,8 @@ export default function UserModel(mongoose) {
         name: String,
         phone: String,
         birth: String,
-        address: String
+        address: String,
+        token: String
     })
 
     uesrSchema.methods.comparePassword = function (plainPassword, cb) {

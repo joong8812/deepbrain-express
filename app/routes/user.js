@@ -26,5 +26,9 @@ app.post('/join', cors(corsOptions), (req, res) => {
     console.log(' ### 5. Router entry ### ')
     UserService().join(req, res)
 })
+app.post('/login', cors(corsOptions), (req, res) => {
+    console.log(' ### 5. Router entry - login ### ')
+    UserService().login(req, res)
+})
 
 export default app
