@@ -30,5 +30,9 @@ app.post('/login', cors(corsOptions), (req, res) => {
     console.log(' ### 5. Router entry - login ### ')
     UserService().login(req, res)
 })
+app.get('/logout', passport.authenticate('jwt', {session: false}), (req, res) => {
+    console.log(' ### 5. Router entry - logout ### ')
+    UserService().logout(req, res)
+})
 
 export default app
