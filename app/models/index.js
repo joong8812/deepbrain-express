@@ -6,6 +6,6 @@ mongoose.Promise = global.Promise
 const db = {}
 db.mongoose = mongoose
 db.url = dotenv.MONGO_URI
-db.user = new UserModel(mongoose)
+db.User = new UserModel(mongoose)
 
 export default db

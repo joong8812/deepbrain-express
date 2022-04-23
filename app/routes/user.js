@@ -2,6 +2,7 @@ import express from "express"
 import cors from 'cors'
 import dotenv from 'dotenv'
 import passport from 'passport'
+import UserService from '../services/user.js'
 
 dotenv.config()
 const mongoUri = process.env.MONGO_URI
@@ -21,5 +22,9 @@ app.use(function (_req, res, next) {
     );
     next();
 });
+app.post('/join', cors(corsOptions), (req, res) => {
+    console.log(' ### 5. Router entry ### ')
+    UserService().join(req, res)
+})
 
 export default app
